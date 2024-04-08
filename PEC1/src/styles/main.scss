@@ -1,0 +1,39 @@
+// h1 {
+//     color: hotpink;
+//     font-family: cursive;
+// }
+// h2 {
+//     color: hotpink;
+//     font-family: cursive;
+// }
+// h3 {
+//     color: hotpink;
+//     font-family: cursive;
+// }
+// body {
+//     height: 100vh;
+//     color: #1f1f1f;
+//     background: linear-gradient(to bottom, #bada55, #c0ffee);
+//   }
+
+//   a {
+//     transition: transform 1s
+//   }
+
+//   a {
+//     background: linear-gradient(to top, black, white);
+//     display: flex
+//   }
+//   ::placeholder {
+//     color: #ccc
+//   }
+//   a {
+//     -webkit-border-radius: 5px;
+//     border-radius: 5px
+//   }
+
+@import "./variables";
+
+@import "./body";
+@import "./header/header";
+@import "./footer";
