@@ -1,5 +1,4 @@
 .detalle {
-
     font-family: 'Lato', sans-serif;
     font-weight: 400;
     background-image: url("../assets/images/fondo_portada.jpeg");
@@ -19,17 +18,16 @@
             padding: 2px;
         }
 
-        >li:after {
+        >li::after {
             content: " > ";
         }
 
-        >li:nth-last-child(1):after {
+        >li:nth-last-child(1)::after {
             content: "";
             background-color: brown;
         }
 
         .breadcrumbs {
-
             &__link {
                 text-decoration: none;
                 color: var(--text-color-footer-bacground);
@@ -44,6 +42,7 @@
 
     &__content {
         @include boxStyle;
+
         padding: 1%;
         margin: 0 1%;
         display: flex;
@@ -58,7 +57,6 @@
         }
 
         .content {
-
             &__intro {
                 margin: 1% 0;
                 text-align: justify;
@@ -68,11 +66,9 @@
             }
 
             &__header {
-
                 background-color: $mainColor;
 
                 .header {
-
                     &__img {
                         width: 100%;
                     }
@@ -113,39 +109,32 @@
             }
 
             &__grid-videos {
-
                 width: 90%;
 
                 .grid-videos {
-
                     &__container-video {
-
                         .container-video {
-
                             &__video {
-
-                                position: relative;
-                                overflow: hidden;
                                 width: 100%;
                                 padding-top: 56.25%;
+                                position: relative;
+                                overflow: hidden;
                             }
 
                             &__iframe-video {
-                                position: absolute;
-                                top: 0;
-                                left: 0;
-                                bottom: 0;
-                                right: 0;
                                 width: 100%;
                                 height: 100%;
                                 border: none;
                                 margin: 1%;
+                                position: absolute;
+                                top: 0;
+                                right: 0;
+                                bottom: 0;
+                                left: 0;
                             }
 
                             &__description {
-
                                 .description {
-
                                     &__title {
                                         font-family: kings-pirates;
                                         font-size: 1rem;
@@ -159,7 +148,6 @@
             }
 
             &__letter {
-
                 width: 80%;
 
                 >p {
@@ -176,14 +164,14 @@
 
     &__recents-articles {
         @include boxStyle;
+
+        height: fit-content;
         padding: 1%;
         margin: 3% 1%;
-        height: fit-content;
         display: flex;
         flex-direction: column;
 
         .recents-articles {
-
             &__input {
                 margin: 1% 0;
                 background-color: $mainColor;
@@ -225,16 +213,14 @@
                 position: relative;
 
                 .categories {
-
                     &__list {
+                        width: 100%;
+                        padding: 0;
                         display: flex;
                         list-style: none;
                         justify-content: center;
-                        padding: 0;
-                        width: 100%;
 
                         >li {
-
                             margin: 2%;
 
                             >a {
@@ -258,50 +244,43 @@
 }
 
 @media (min-width: 768px) {
-
     .detalle {
-
         &__content {
             width: 99%;
 
             .content {
-
                 &__grid-videos {
-
+                    width: 100%;
                     display: grid;
                     grid-template-columns: 1fr 1fr;
-                    width: 100%;
                     justify-content: center;
                 }
             }
         }
 
         &__recents-articles {
+            padding: 50px 1%;
             flex-direction: row;
             position: relative;
-            padding: 50px 1%;
 
             .recents-articles {
-
                 &__title {
                     position: absolute;
                     top: 0;
                 }
 
                 &__categories {
-                    position: absolute;
-                    bottom: -15px;
-                    right: 0;
-                    left: 0;
                     display: flex;
+                    position: absolute;
+                    right: 0;
+                    bottom: -15px;
+                    left: 0;
 
                     .categories {
-
                         &__list {
                             width: 100vw;
 
                             >li {
-
                                 >a {
                                     font-size: 1.8rem;
                                 }
@@ -315,9 +294,7 @@
 }
 
 @media (min-width: 992px) {
-
     .detalle {
-
         &__content {
             width: 60%;
         }

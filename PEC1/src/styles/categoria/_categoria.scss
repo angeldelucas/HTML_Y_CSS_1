@@ -1,18 +1,15 @@
 .category {
-
     background-image: url("../assets/images/fondo_portada.jpeg");
     padding: 2%;
 
     &__list{
+        padding: 0;
         display: flex;
         flex-direction: row;
-        padding: 0;
         justify-content: center;
 
         .list{
-
             &__elto{
-
                 padding: 2%;
                 
                 >a{
@@ -37,25 +34,23 @@
     }
 
     &__grid-categories {
-
         display: flex;
         flex-direction: column;
 
 
         .grid-categories {
-
             &__new {
-                display: flex;
-                flex-direction: column;
-                margin-bottom: 2%;
                 @include boxStyle;
 
-                .new {
+                margin-bottom: 2%;
+                display: flex;
+                flex-direction: column;
 
+                .new {
                     &__img-container {
-                        position: relative;
                         display: flex;
                         flex-direction: column;
+                        position: relative;
                         align-items: end;
                     }
 
@@ -65,10 +60,10 @@
 
                     &__img-copyright {
                         padding: 0.2%;
-                        font-size: 0.8rem;
                         position: absolute;
-                        bottom: 1%;
                         right: 1%;
+                        bottom: 1%;
+                        font-size: 0.8rem;
                         background-color: rgba(172, 172, 172, 0.4);
                     }
 
@@ -104,20 +99,19 @@
     }
 
     &__paginator {
+        padding: 0;
+        margin: 20px 0;
         display: flex;
         flex-direction: row;
         justify-content: center;
         list-style-type: none;
-        margin: 20px 0 20px 0;
-        padding: 0;
 
         .paginator {
-
             &__new-page {
-                border: 1px solid $mainColor;
                 width: 32px;
                 height: 42px;
                 padding: 10px;
+                border: 1px solid $mainColor;
                 margin: 8px;
 
                 &:hover{
@@ -148,9 +142,7 @@
 /* Dispositivos especialmente pequeños (phones, menores que 768px) */
 /* Estilos principales, ya que es el contexto por defecto en Bootstrap */
 @media (min-width: 768px) {
-
     .category {
-
         &__grid-categories {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -159,11 +151,8 @@
         }
 
         &__list{
-    
             .list{
-    
                 &__elto{
-                        
                     >a{
                         font-size: 3rem;
                     }
@@ -177,7 +166,6 @@
 
     /* Dispositivos medios (escritorio, 992px y superiores) */
     .category {
-
         &__grid-categories {
             display: grid;
             grid-template-columns: 1fr 1fr 1fr 1fr;
