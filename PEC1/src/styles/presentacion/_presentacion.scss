@@ -1,0 +1,229 @@
+.presentacion {
+
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+    background-image: url("../assets/images/fondo_portada.jpeg");
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &__content {
+
+        padding: 2%;
+        height: 100%;
+
+        .content {
+
+            &__intro {
+                background-color: rgb(172, 172, 172, 0.7);
+                border: 1px solid rgba(172, 172, 172);
+                box-shadow: 0 0 8px rgb(172, 172, 172);
+                margin-bottom: 2%;
+                padding: 1%;
+
+                .intro {
+
+                    &__title {
+                        font-family: font-punk-rock;
+                        font-size: 2.5rem;
+                        color: rgb(0, 0, 0);
+                        margin: 1%;
+                    }
+
+
+                }
+
+                >p {
+                    margin: 1% 0;
+                    text-align: justify;
+                    line-height: 1.4;
+                    font-size: small;
+                }
+            }
+
+            &__menu {
+
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                background-color: rgb(172, 172, 172, 0.7);
+                border: 1px solid rgba(172, 172, 172);
+                box-shadow: 0 0 8px rgb(172, 172, 172);
+                border-bottom: none;
+
+                >img {
+                    width: 10%;
+                    height: 10%;
+                    padding: 2%;
+
+                    &:hover {
+                        cursor: pointer;
+                        background-color: rgb(228, 228, 228);
+                    }
+                }
+            }
+
+            &__info {
+
+                width: 100%;
+                
+
+                .info {
+                    &__block {
+                        background-color: rgba(172, 172, 172, 0.7);
+                        border: 1px solid rgba(172, 172, 172);
+                        border-top: none;
+                        box-shadow: 0 0 8px rgb(172, 172, 172);
+                        margin-bottom: 2%;
+
+                        >figure {
+                            position: relative;
+                            display: flex;
+                            justify-content: center;                            
+                        }
+
+                        >figure>figcaption {
+                            font-size: 0.8rem;
+                            padding: 0.2%;
+                            position: absolute;
+                            right: 6%;
+                            bottom: 2%;
+                            background-color: rgba(172, 172, 172, 0.4);
+                        }
+                    }
+
+                    &__img {
+                        width: 90%; 
+                        
+                    }
+
+                    &__description-container {
+                        position: relative;
+
+                        >p {
+                            margin: 1% 1%;
+                            text-align: justify;
+                            line-height: 1.4;
+                            font-size: small;
+                        }
+                    }
+
+                    &__title {
+                        position: absolute;
+                        font-weight: 500;
+                        bottom: 200%;
+                        display: flex;
+                        width: 100%;
+                        left: 0;
+                        right: 0;
+                        justify-content: center;
+
+                        >a {
+                            font-family: font-punk-rock;
+                            font-size: 2rem;
+                            text-decoration: none;
+                            color: white;
+                            background-color: black;
+
+                            &:hover {
+                                text-shadow: 0 0 15px white;
+                                // background-color: black;
+                            }
+                        }
+                    }
+                }
+
+            }
+
+            &__grid-videos {
+
+                .grid-videos {
+
+                    &__container-video {
+
+                        display: flex;
+                        flex-direction: column;
+                        height: 100%;
+
+                        .container-video {
+
+                            &__video {
+
+                                position: relative;
+                                overflow: hidden;
+                                width: 100%;
+                                padding-top: 56.25%;
+                            }
+
+                            &__iframe-video {
+                                position: absolute;
+                                top: 0;
+                                left: 0;
+                                bottom: 0;
+                                right: 0;
+                                width: 100%;
+                                height: 100%;
+                                border: none;
+                                margin: 1% 0;
+                            }
+                        }
+                    }
+                }
+
+            }
+        }
+    }
+}
+
+@media (min-width: 768px) {
+
+    .presentacion {
+
+        &__content {
+            width: 90%;
+
+            .content {
+
+                &__info {
+
+                    .info {
+                        &__title {
+                            bottom: 290%;
+
+                            >a{
+
+                                font-size: 4rem;
+                            }
+                        }
+                    }
+                }
+
+                &__menu {
+
+                    >img {
+                        width: 8%;
+                        height: 8%;
+                    }
+                }
+
+                &__grid-videos {
+
+                    display: grid;
+                    grid-template-columns: 1fr 1fr 1fr;
+                }
+            }
+        }
+    }
+
+}
+
+@media (min-width: 992px) {
+
+    .presentacion {
+
+        &__content {
+            width: 60%;
+        }
+    }
+
+}

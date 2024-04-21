@@ -6,3 +6,40 @@
     font-family: 'font-punk-rock'; /*a name to be used later*/
     src: url('../assets/font/punk-rock/PunkrockshowRegular-xP4m.ttf'); /*URL to font*/
     }
+@font-face {
+    font-family: 'kings-pirates'; /*a name to be used later*/
+    src: url('../assets/font/kings/KingsAndPirates-p7EAK.ttf'); /*URL to font*/
+    }
+
+.hide{
+    visibility: hidden;
+    position: absolute;
+    bottom: 0;    
+}
+
+.show{
+    visibility: visible;
+    position: relative;
+    bottom: inherit;
+}
+
+.active{
+    background-color: black;
+    transition: all 700ms;
+}
+
+.selected{
+    background-color: rgba(172, 172, 172, 0.7);
+}
+
+.icon-active{
+    background-color: rgba(172, 172, 172);
+    transition: all 700ms;
+}
+
+.menu-active{
+    text-decoration: underline !important;
+    text-underline-offset: 10px;
+    color: white;
+    background: radial-gradient(rgb(172, 172, 172), transparent 75%);
+}

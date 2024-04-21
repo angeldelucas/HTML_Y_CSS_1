@@ -1,0 +1,51 @@
+.enlaces {
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+    background-image: url("../assets/images/fondo_portada.jpeg");
+    height: max-content;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2%;
+
+    &__container {
+        background-color: rgb(172, 172, 172, 0.7);
+        border: 1px solid rgba(172, 172, 172, 0.7);
+        box-shadow: 0 0 8px rgb(172, 172, 172);
+        width: 100%;
+        padding: 4%;
+        
+        >p{
+            margin: 1% 0;
+            text-align: justify;
+        }
+    }
+
+    &__list {
+        margin: 2%;
+        height: fit-content;
+        padding: 0 4%;
+
+        .list {
+
+            &__elto {
+
+                margin: 2% 0;
+
+                :hover {
+
+                    cursor: pointer;
+                    text-decoration: underline;
+                }
+
+                >a {
+                    text-decoration: none;
+                    list-style: none;
+                    color: black;
+                }
+            }
+        }
+
+    }
+}
