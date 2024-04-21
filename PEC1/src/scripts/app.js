@@ -22,25 +22,21 @@ let news = [
     {
         title: 'Zeta no continua con la banda',
         sectionIntro: 'después de meses luchando Zeta ha decidido no continuar aunque deja la puerta abierta',
-        // link: 'https://magodeozoficial.com/zeta-sufre-una-recaida-y-no-continuara-en-mago-de-oz-por-motivos-de-salud/',
         href: './detalle.html'
     },
     {
         title: 'entrevista para los 40 principales',
         sectionIntro: 'en esta entrevista la banda repasa las últimas participaciones españolas en Eurovisión',
-        // link: 'https://los40.com/2024/04/10/mago-de-oz-sobre-eurovision-tiene-que-ir-gente-mas-joven-y-no-la-mieda-que-estan-mandando-ultimamente/',
         href: ''
     },
     {
         title: 'Presentación gira 2024',
         sectionIntro: 'Mago de Oz inicia su gira en Madrid en una mañana repleta de rock y letras reivindicativas',
-        // link: 'https://www.msn.com/es-es/entretenimiento/musica/mago-de-oz-inicia-su-gira-en-madrid-en-una-ma%C3%B1ana-repleta-de-rock-y-letras-reivindicativas/ar-BB1lEQai',
         href: ''
     },
     {
         title: 'Presentación en Veracruz',
         sectionIntro: 'Se acerca la presentación de Mägo de Oz en Veracruz no te pierdas la fecha y la sede',
-        // link: 'https://www.diariodexalapa.com.mx/doble-via/concierto-de-mago-de-oz-en-veracruz-sedes-fechas-y-horarios-11774260.html#!',
         href: ''
     }
 ];
@@ -94,6 +90,7 @@ function next(event) {
 
     for (let numNextElto = 0; numNextElto < groupPagesEltos.length; numNextElto++) {
         groupPagesEltos[numNextElto].classList.remove('active');
+        // groupPagesEltos[numNextElto].className = "menu__icon";
     }
 
     for (let numNextImg = 0; numNextImg < imagesEltos.length; numNextImg++) {
@@ -133,6 +130,7 @@ function nextAutomatic(sectionEltoId, currentElto) {
 
     for (let numNextElto = 0; numNextElto < groupPagesEltos.length; numNextElto++) {
         groupPagesEltos[numNextElto].classList.remove('active');
+        // groupPagesEltos[numNextElto].className = "menu__icon";
     }
 
     for (let numNextImg = 0; numNextImg < imagesEltos.length; numNextImg++) {

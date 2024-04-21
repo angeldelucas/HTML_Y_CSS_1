@@ -45,12 +45,7 @@
                 >img {
                     width: 10%;
                     height: 10%;
-                    padding: 2%;
-
-                    &:hover {
-                        cursor: pointer;
-                        background-color: rgb(228, 228, 228);
-                    }
+                    padding: 2%;                    
                 }
             }
 
@@ -159,6 +154,7 @@
     }
 }
 
+
 @media (min-width: 768px) {
     .presentacion {
         &__content {
@@ -181,6 +177,11 @@
                     >img {
                         width: 8%;
                         height: 8%;
+
+                        &:hover {
+                            cursor: pointer;
+                            background-color: rgb(228, 228, 228);
+                        }
                     }
                 }
 

@@ -73,7 +73,7 @@
             }
 
             &__group-pages {
-                width: 15%;
+                width: 30%;
                 padding: 0.5%;
                 display: flex;
                 position: absolute;
@@ -91,20 +91,6 @@
                         border-radius: 7.5;
                         margin: 0 2%;
                         transition: all 700ms;
-
-                        &--active {
-                            width: 10px;
-                            height: 10px;
-                            border: 1px solid black;
-                            border-radius: 7.5;
-                            margin: 0 2%;
-                            background-color: black;
-                        }
-
-                        &:hover {
-                            cursor: pointer;
-                            background-color: black;
-                        }
                     }
                 }
             }
@@ -197,10 +183,6 @@
                             border: 2px solid black;
                             border-radius: 7.5;
                             margin: 0 2%;
-
-                            &--active {
-                                background-color: black;
-                            }
 
                             &:hover {
                                 cursor: pointer;
