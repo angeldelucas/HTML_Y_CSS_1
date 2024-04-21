@@ -1,4 +1,57 @@
+// Arrays que almacenan la información que se debe mostrar en los menús
+// denámicos en las portadas
 
+// Menú dinámico portada pantallas > 768px
+let presentationSection = [
+    {
+        title: 'ultimas noticias',
+        // imgSrc: './assets/images/Mago de Oz.jpg'
+    },
+    {
+        title: 'conoce mago de oz',
+        // imgSrc: './assets/images/grupo.jpg'
+    },
+    {
+        title: 'proximos conciertos',
+        // imgSrc: './assets/images/concierto.jpg'
+    },
+];
+
+// Menú dinámico portada pantallas < 768px
+let news = [
+    {
+        title: 'Zeta no continua con la banda',
+        sectionIntro: 'después de meses luchando Zeta ha decidido no continuar aunque deja la puerta abierta',
+        // link: 'https://magodeozoficial.com/zeta-sufre-una-recaida-y-no-continuara-en-mago-de-oz-por-motivos-de-salud/',
+        href: './detalle.html'
+    },
+    {
+        title: 'entrevista para los 40 principales',
+        sectionIntro: 'en esta entrevista la banda repasa las últimas participaciones españolas en Eurovisión',
+        // link: 'https://los40.com/2024/04/10/mago-de-oz-sobre-eurovision-tiene-que-ir-gente-mas-joven-y-no-la-mieda-que-estan-mandando-ultimamente/',
+        href: ''
+    },
+    {
+        title: 'Presentación gira 2024',
+        sectionIntro: 'Mago de Oz inicia su gira en Madrid en una mañana repleta de rock y letras reivindicativas',
+        // link: 'https://www.msn.com/es-es/entretenimiento/musica/mago-de-oz-inicia-su-gira-en-madrid-en-una-ma%C3%B1ana-repleta-de-rock-y-letras-reivindicativas/ar-BB1lEQai',
+        href: ''
+    },
+    {
+        title: 'Presentación en Veracruz',
+        sectionIntro: 'Se acerca la presentación de Mägo de Oz en Veracruz no te pierdas la fecha y la sede',
+        // link: 'https://www.diariodexalapa.com.mx/doble-via/concierto-de-mago-de-oz-en-veracruz-sedes-fechas-y-horarios-11774260.html#!',
+        href: ''
+    }
+];
+
+// Variables para el control del elemento mostrado en los menús dinámicos.
+let currentCategory = 0;
+let currentNew = 0;
+let currentOption = 0;
+
+// Función que abre y cierra el header mostrando el menú de la web cuando estamos
+// en pantallas de móvil o tablets.
 function menu() {
     let menuOptions = document.getElementById("menu-options");
     let menuBtn = document.getElementById("menu-btn");
@@ -25,52 +78,10 @@ function menu() {
     }
 }
 
-
-let presentationSection = [
-    {
-        title: 'ultimas noticias',
-        imgSrc: './assets/images/Mago de Oz.jpg'
-    },
-    {
-        title: 'conoce mago de oz',
-        imgSrc: './assets/images/grupo.jpg'
-    },
-    {
-        title: 'proximos conciertos',
-        imgSrc: './assets/images/concierto.jpg'
-    },
-];
-
-let news = [
-    {
-        title: 'Zeta no continua con la banda',
-        sectionIntro: 'después de meses luchando Zeta ha decidido no continuar aunque deja la puerta abierta',
-        link: 'https://magodeozoficial.com/zeta-sufre-una-recaida-y-no-continuara-en-mago-de-oz-por-motivos-de-salud/',
-        href: './detalle.html'
-    },
-    {
-        title: 'entrevista para los 40 principales',
-        sectionIntro: 'en esta entrevista la banda repasa las últimas participaciones españolas en Eurovisión',
-        link: 'https://los40.com/2024/04/10/mago-de-oz-sobre-eurovision-tiene-que-ir-gente-mas-joven-y-no-la-mieda-que-estan-mandando-ultimamente/',
-        href: ''
-    },
-    {
-        title: 'Presentación gira 2024',
-        sectionIntro: 'Mago de Oz inicia su gira en Madrid en una mañana repleta de rock y letras reivindicativas',
-        link: 'https://www.msn.com/es-es/entretenimiento/musica/mago-de-oz-inicia-su-gira-en-madrid-en-una-ma%C3%B1ana-repleta-de-rock-y-letras-reivindicativas/ar-BB1lEQai',
-        href: ''
-    },
-    {
-        title: 'Presentación en Veracruz',
-        sectionIntro: 'Se acerca la presentación de Mägo de Oz en Veracruz no te pierdas la fecha y la sede',
-        link: 'https://www.diariodexalapa.com.mx/doble-via/concierto-de-mago-de-oz-en-veracruz-sedes-fechas-y-horarios-11774260.html#!',
-        href: ''
-    }
-]
-
-
+// Función que muestra el nuevo elemento en las ventanas de:
+// 1. categorías en la vista para pantallas grandes
+// 2. categorías en la vista para pantallas pequeñas
 function next(event) {
-    let sectionElto = event.srcElement.parentElement.parentNode.parentElement;
     let sectionEltoId = event.srcElement.parentElement.parentNode.parentElement.id;
     let portadaMainElto = document.querySelector('#' + sectionEltoId + ' > .portada__main');
     let sectionTitle = document.querySelector("#" + sectionEltoId + " > h1 > .section__title");
@@ -106,9 +117,9 @@ function next(event) {
     currentNew = sectionEltoId == "news-section" ? nextClickedBtnId : currentNew;
 }
 
-let currentCategory = 0;
-let currentNew = 0;
-
+// Función que cada 5 seg cambia el elemnto monstrado en las ventanas de:
+// 1. categorías en la vista para pantallas grandes
+// 2. categorías en la vista para pantallas pequeñas
 function nextAutomatic(sectionEltoId, currentElto) {
     let portadaMainElto = document.querySelector('#' + sectionEltoId + ' > .portada__main');
 
@@ -142,29 +153,9 @@ function nextAutomatic(sectionEltoId, currentElto) {
     imagesEltos[currentElto].classList.add('show');
 }
 
-setInterval(
-    function () {
-        nextAutomatic("presentation-section", currentCategory);
-        if (currentCategory < 2) {
-            currentCategory++;
-        }
-        else {
-            currentCategory = 0;
-        }
-    }, 5000);
-
-setInterval(
-    function () {
-        nextAutomatic("news-section", currentNew);
-        if (currentNew < 3) {
-            currentNew++;
-        }
-        else {
-            currentNew = 0;
-        }
-    }, 5000);
-
-function nextMenu(event) {
+// Función para cambiar el elemento mostrado en el menú de presentación
+// cuando se clica en los iconos
+function nextPresentationMenu(event) {
 
     let iconsMenu = document.querySelectorAll(".content__menu > img");
     let iconClicked = event.target;
@@ -185,9 +176,8 @@ function nextMenu(event) {
     currentOption = iconClickedId;
 }
 
-let currentOption = 0;
-
-function nextMenuAutomatic(event) {
+// Función para cambiar cada 5 seg el elemento mostrado en el menú de presentación
+function nextPresentationMenuAutomatic(currentElto) {
 
     let iconsMenu = document.querySelectorAll(".content__menu > img");
     let articles = document.querySelectorAll(".content__info > article");
@@ -202,20 +192,45 @@ function nextMenuAutomatic(event) {
         articles[numArticle].className = "info__block hide";
     }
 
-    articles[currentOption].className = "info__block";
-    iconsMenu[currentOption].className = "menu__icon icon-active";
+    articles[currentElto].className = "info__block";
+    iconsMenu[currentElto].className = "menu__icon icon-active";    
+}
 
+// Temporizadores que controlan el cambio de elemento en los menús 
+// automáticos en las vistas de presentación y portada
+// setInterval(nextPresentationMenuAutomatic, 5000);
+setInterval(function(){
+    nextPresentationMenuAutomatic(currentOption);
     if (currentOption < 7) {
         currentOption++;
     }
     else {
         currentOption = 0;
     }
-}
+}, 5000);
 
-setInterval(nextMenuAutomatic, 5000);
+setInterval(function () {
+    nextAutomatic("presentation-section", currentCategory);
+    if (currentCategory < 2) {
+        currentCategory++;
+    }
+    else {
+        currentCategory = 0;
+    }
+}, 5000);
 
-function menuOption(event) {
+setInterval(function () {
+    nextAutomatic("news-section", currentNew);
+    if (currentNew < 3) {
+        currentNew++;
+    }
+    else {
+        currentNew = 0;
+    }
+}, 5000);
+
+// Función para marcar como seleccionado el elemento del header menu correspondiente
+function headerMenuOption(event) {
 
     let optionClicked = event.target;
     let headerMenuOptions = document.querySelectorAll(".options-menu__elto > a");
@@ -227,30 +242,33 @@ function menuOption(event) {
     optionClicked.className = "elto__link menu-active";
 }
 
-
 document.getElementById("menu-btn").addEventListener("click", menu);
-let nextBtnCollection = document.querySelectorAll("#presentation-section > .portada__main > .main__group-pages > div");
-let nextBtnCollection1 = document.querySelectorAll("#news-section > .portada__main > .main__group-pages > div");
+let nextBtnPresentationSection = document.querySelectorAll("#presentation-section > .portada__main > .main__group-pages > div");
+let nextBtnNewsSection = document.querySelectorAll("#news-section > .portada__main > .main__group-pages > div");
 let iconBtn = document.querySelectorAll(".content__menu > img");
 let headerMenuOptions = document.querySelectorAll(".options-menu__elto > a");
 
-nextBtnCollection.forEach(nextBtn => {
+nextBtnPresentationSection.forEach(nextBtn => {
     nextBtn.addEventListener("click", next);
 });
 
-nextBtnCollection1.forEach(nextBtn1 => {
-    nextBtn1.addEventListener("click", next);
+nextBtnNewsSection.forEach(nextBtn => {
+    nextBtn.addEventListener("click", next);
 });
 
-headerMenuOptions.forEach(headerMenuOption => {
-    headerMenuOption.addEventListener("click", menuOption);
-    headerMenuOption.className = "elto__link";
+headerMenuOptions.forEach(option => {
+    option.addEventListener("click", headerMenuOption);
+    option.className = "elto__link";
 });
 
 iconBtn.forEach(nextBtn1 => {
-    nextBtn1.addEventListener("click", nextMenu);
+    nextBtn1.addEventListener("click", nextPresentationMenu);
 });
 
+
+// Condicionales para el control del footer. El footer debe mostrarse en la parte baja
+// de la pantalla cuando la vista seleccionada no es la portada y además estamos en pantallas
+// que nos son ni teléfonos móviles ni tablets.
 if (document.querySelector(".category") && document.querySelector(".category").clientWidth > 768) {
     let footer = document.getElementById("footer");
 
@@ -276,7 +294,6 @@ if (document.querySelector(".presentacion") && document.querySelector(".presenta
 
 if (document.querySelector(".enlaces") && document.querySelector(".enlaces").clientWidth > 768) {
     let footer = document.getElementById("footer");
-    let body = document.body;
 
     footer.style.opacity = 1;
     footer.style.position = "relative";

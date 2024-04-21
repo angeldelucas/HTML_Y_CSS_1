@@ -10,9 +10,7 @@
     padding: 2%;
 
     &__container {
-        background-color: rgb(172, 172, 172, 0.7);
-        border: 1px solid rgba(172, 172, 172, 0.7);
-        box-shadow: 0 0 8px rgb(172, 172, 172);
+        @include boxStyle;
         width: 100%;
         padding: 4%;
         
